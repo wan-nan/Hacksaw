@@ -1,7 +1,9 @@
 #!/bin/bash
 
-USERID=$(id -u)
-GROUPID=$(id -g)
+# USERID=$(id -u)
+# GROUPID=$(id -g)
+USERID=1000
+GROUPID=1000
 
 docker buildx build -f Dockerfile -t hacksaw:0.1 --build-arg USER_ID=$USERID --build-arg GROUP_ID=$GROUPID .
 
