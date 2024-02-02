@@ -47,10 +47,8 @@ if [ ! -z "${sysmap}" ] && [ ! -f ${sysmap} ]; then
   exit 1
 fi
 
-# USERID=$(id -u)
-# GROUPID=$(id -g)
-USERID=1000
-GROUPID=1000
+USERID=$(id -u)
+GROUPID=$(id -g)
 
 ROOTDIR=$(dirname $(dirname $(realpath $0)))
 CNT_BASE_PATH="/hacksaw"

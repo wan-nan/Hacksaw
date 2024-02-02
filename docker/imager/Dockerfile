@@ -1,7 +1,7 @@
 FROM debian:12.2-slim
 
-ARG USER_ID
-ARG GROUP_ID
+# ARG USER_ID
+# ARG GROUP_ID
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -10,8 +10,8 @@ RUN apt update \
   && apt install -y \
     libguestfs-tools
 
-RUN groupadd -g ${GROUP_ID} hacksaw
-RUN useradd -u ${USER_ID} -g ${GROUP_ID} -m hacksaw
+# RUN groupadd -g ${GROUP_ID} hacksaw
+# RUN useradd -u ${USER_ID} -g ${GROUP_ID} -m hacksaw
 
 RUN mkdir -p /hacksaw
 WORKDIR /hacksaw

@@ -1,7 +1,7 @@
 FROM python:3.10.12-slim 
 
-ARG USER_ID
-ARG GROUP_ID
+# ARG USER_ID
+# ARG GROUP_ID
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -44,8 +44,8 @@ RUN update-alternatives \
   --slave /usr/bin/llvm-ar llvm-ar /usr/bin/llvm-ar-15 \
   --slave /usr/bin/opt opt /usr/bin/opt-15
 
-RUN groupadd -g ${GROUP_ID} hacksaw
-RUN useradd -u ${USER_ID} -g ${GROUP_ID} -m hacksaw
+# RUN groupadd -g ${GROUP_ID} hacksaw
+# RUN useradd -u ${USER_ID} -g ${GROUP_ID} -m hacksaw
 
 RUN mkdir -p /hacksaw
 WORKDIR /hacksaw
